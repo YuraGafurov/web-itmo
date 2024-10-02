@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0 20px 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #008080;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #008080;
+    padding-bottom: 5px;
+}
+
+h1 {
+    color: #008080;;
+}
+
+.skill-category h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0 5px;
+}
+
+.skill-category p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+p {
+    color: #333;
+}
+
+.about img {
+    cursor: zoom-in;
+    width: 20%;
+    margin: 10px;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 1% 10%;
+    list-style: none;
+    font-size: 18px;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: inherit;
+}
