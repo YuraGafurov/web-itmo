@@ -1,7 +1,8 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0 20px 20px;
+    padding: 0 20px 60px;
+    overflow-x: hidden
 }
 
 h2 {
@@ -55,3 +56,91 @@ p {
     text-decoration: none;
     color: inherit;
 }
+
+.skills-section {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .about img {
+        width: 50%;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    aside pre {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .about img {
+        width: 30%;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+.grid-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 1000px;
+    border: 2px solid #008080;
+    padding: 10px;
+}
+
+.grid-header {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #008080;
+    color: #008080;
+    padding: 10px;
+    border: 1px solid #008080;
+}
+
+.grid-table div {
+    padding: 10px;
+    border: 1px solid #008080;
+}
+
+.grid-table div:nth-child(3n+1), .grid-table div:nth-child(3n+2), .grid-table div:nth-child(3n+3) {
+    background-color: #f0f8f8;
+}
+
+.grid-table div:nth-child(6n+1), .grid-table div:nth-child(6n+2), .grid-table div:nth-child(6n+3) {
+    background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .grid-table {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-header {
+        text-align: center;
+    }
+}
+
+
