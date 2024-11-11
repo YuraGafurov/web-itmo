@@ -35,7 +35,7 @@ p {
     color: #333;
 }
 
-.about img {
+#about img {
     cursor: zoom-in;
     width: 20%;
     margin: 10px;
@@ -142,5 +142,19 @@ footer {
         text-align: center;
     }
 }
+
+/* Наведение на пункты меню */
+.navigation ul li a:hover {
+    color: #008080;
+    text-decoration: underline;
+}
+
+/* Активный пункт меню */
+.navigation ul li a.active {
+    font-weight: bold;
+    color: #008080;
+    text-decoration: underline;
+}
+
 
 
