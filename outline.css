@@ -173,5 +173,24 @@ footer {
     border-bottom: 1px solid #ddd;
 }
 
+.swiper-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
 
+.swiper-slide {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 70%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #008080!important;
+}
 

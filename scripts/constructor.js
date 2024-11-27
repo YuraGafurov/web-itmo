@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         interviewsTable.appendChild(row);
     }
 
-    // Fetch API: Загрузка данных
     async function fetchData() {
         preloader.style.display = "block";
         errorMessage.style.display = "none";
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             );
 
-            // Объединяем все массивы задач
+            // Объединяем все массивы юзеров
             const users = usersArray.flat();
 
             // Отображаем данные
@@ -65,6 +64,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Инициализация Fetch
     fetchData();
 });

@@ -5,6 +5,11 @@
     <title>Портфолио - Гафуров Юрий</title>
     <link rel="stylesheet" href="outline.css">
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/portfolio.js" defer></script>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+
 </head>
 <body>
 <header>
@@ -28,6 +33,19 @@
             <li>Проект 1</li>
             <li>Проект 2</li>
         </ol>
+
+        <h2 style="margin-bottom: 40px">Галерея проектов</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="project1.png" alt="Проект 1"></div>
+                <div class="swiper-slide"><img src="project2.png" alt="Проект 2"></div>
+                <div class="swiper-slide"><img src="project3.png" alt="Проект 3"></div>
+            </div>
+            <!-- Кнопки навигации -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
     </section>
 
     <section id="projects-table">
