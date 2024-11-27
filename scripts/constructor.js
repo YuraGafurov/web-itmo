@@ -9,65 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
     headerRow.classList.add("interview-header-row");
     headerRow.innerHTML = `
         <div>Компания</div>
-        <div>Дата</div>
-        <div>Время</div>
+        <div>Стаж(мес)</div>
     `;
     interviewsTable.appendChild(headerRow);
 
-    const savedInterviews = JSON.parse(localStorage.getItem("interviewsList")) || [];
-    sortInterviews(savedInterviews);
-    savedInterviews.forEach(addInterviewRow);
-
-    // Обработка формы
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const company = form.elements["company"].value;
-        const date = form.elements["date"].value;
-        const time = form.elements["time"].value;
-
-        const interview = { company, date, time };
-
-        savedInterviews.push(interview);
-        sortInterviews(savedInterviews);
-
-        localStorage.setItem("interviewsList", JSON.stringify(savedInterviews));
-
-        renderInterviewsTable();
-
-        form.reset();
-    });
-
-    function sortInterviews(interviews) {
-        interviews.sort((a, b) => {
-            const dateTimeA = new Date(`${a.date}T${a.time}`);
-            const dateTimeB = new Date(`${b.date}T${b.time}`);
-            return dateTimeA - dateTimeB;
-        });
-    }
-
-    function renderInterviewsTable() {
-        interviewsTable.innerHTML = '';
-        interviewsTable.appendChild(headerRow);
-        savedInterviews.forEach(addInterviewRow);
-    }
-
-    function addInterviewRow({ company, date, time }) {
+    function addInterviewRow({ company, time }) {
         const row = document.createElement("div");
         row.classList.add("interview-row");
         row.innerHTML = `
             <div>${company}</div>
-            <div>${date}</div>
             <div>${time}</div>
         `;
         interviewsTable.appendChild(row);
     }
-
-    clearTableButton.addEventListener("click", () => {
-        localStorage.removeItem("interviewsList");
-        savedInterviews.length = 0;
-        renderInterviewsTable();
-    });
 
     // Fetch API: Загрузка данных
     async function fetchData() {
@@ -86,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const responses = await Promise.all(requests);
 
             // Проверяем статусы запросов
-            const todosArrays = await Promise.all(
+            const usersArray = await Promise.all(
                 responses.map(response => {
                     if (!response.ok) {
                         throw new Error(`Ошибка при запросе userId: ${response.url}`);
@@ -96,19 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             // Объединяем все массивы задач
-            const todos = todosArrays.flat();
+            const users = usersArray.flat();
 
             // Отображаем данные
             preloader.style.display = "none";
-            todos.forEach((todo) => {
-                const row = document.createElement("div");
-                row.classList.add("interview-row");
-                row.innerHTML = `
-                <div>Задача для userId: ${todo.id}</div>
-                <div>${todo.name}</div>
-                <div>${todo.username}</div>
-            `;
-                interviewsTable.appendChild(row);
+            users.forEach((user) => {
+                const company = user.company.name;
+                const time = user.id
+                addInterviewRow( { company, time })
             });
         } catch (error) {
             preloader.style.display = "none";
