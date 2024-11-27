@@ -114,10 +114,9 @@ footer {
 .grid-header {
     font-weight: bold;
     text-transform: uppercase;
-    background-color: #008080;
     color: #008080;
     padding: 10px;
-    border: 1px solid #008080;
+    text-align: center;
 }
 
 .grid-table div {
@@ -133,27 +132,45 @@ footer {
     background-color: #ffffff;
 }
 
-@media (max-width: 768px) {
-    .grid-table {
-        grid-template-columns: 1fr;
-    }
-
-    .grid-header {
-        text-align: center;
-    }
-}
-
-/* Наведение на пункты меню */
 .navigation ul li a:hover {
     color: #008080;
     text-decoration: underline;
 }
 
-/* Активный пункт меню */
 .navigation ul li a.active {
     font-weight: bold;
     color: #008080;
     text-decoration: underline;
+}
+
+.constr-container {
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.interview-header-row {
+    display: contents;
+    font-weight: bold;
+    color: #008080;
+    text-align: center;
+    padding: 10px;
+}
+
+.interview-row {
+    display: contents;
+    text-align: center;
+    color: #555;
+}
+
+.interview-row div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 

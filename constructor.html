@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Опыт работы - Гафуров Юрий</title>
+    <link rel="stylesheet" href="outline.css">
+    <script src="scripts/constructor.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Гафуров Юрий - Веб-разработчик</h1>
+    <nav class="navigation">
+        <ul>
+            <li><a href="about.html">Обо мне</a></li>
+            <li><a href="skills.html">Навыки</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+            <li><a href="constructor.html">Конструктор</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <form id="interviewForm">
+        <button type="button" id="clearTableButton">Очистить таблицу</button>
+    </form>
+
+    <h2>Опыт работы</h2>
+    <div id="interviewsTable" class="constr-container"></div>
+
+    <div id="preloader" style="display: none; text-align: center;">
+        <p>Загрузка данных...</p>
+    </div>
+
+    <div id="errorMessage" style="color: red; text-align: center; display: none;">
+        ⚠ Что-то пошло не так. Проверьте соединение.
+    </div>
+</main>
+
+<footer>
+    <p>Контактная информация</p>
+</footer>
+</body>
+</html>
